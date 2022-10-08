@@ -11,6 +11,7 @@ public class CinemaController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.showAdminPanel();
+                view.hideLoginPanel();
             }
         });
     }

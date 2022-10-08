@@ -54,10 +54,20 @@ public class CinemaView extends JFrame {
         //--------------------------------------------------
     }
 
-    public void showAdminPanel(){
-        loginPanel.setVisible(false);
-        customerPanel.setVisible(false);
+    public void showAdminPanel() {
         adminPanel.setVisible(true);
+    }
+
+    public void hideAdminPanel() {
+        adminPanel.setVisible(false);
+    }
+
+    public void showLoginPanel() {
+        loginPanel.setVisible(true);
+    }
+
+    public void hideLoginPanel() {
+        loginPanel.setVisible(false);
     }
 
     public void setAdminLoginButton (ActionListener ac){
