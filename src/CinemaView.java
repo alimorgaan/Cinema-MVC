@@ -59,6 +59,7 @@ public class CinemaView extends JFrame {
 
     }
 
+
     //--------------Login panel-----------------------
     public void showLoginPanel() {
         loginPanel.setVisible(true);
