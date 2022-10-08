@@ -6,7 +6,7 @@ public class CinemaView extends JFrame {
 
     //------------Components-------------------------------------
 
-    //-------------Login panel-------------------------------------
+    //------------------Login panel-------------------------------------
     JPanel loginPanel = new JPanel();
     JButton adminLoginButton = new JButton("Admin");
     JButton customerLoginButton = new JButton("Customer");
@@ -20,9 +20,10 @@ public class CinemaView extends JFrame {
     JButton adminAddButton = new JButton();
     //-------------------------------------------------------------
 
-
+    //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
-
+    
+    //-------------------------------------------------------------
 
     CinemaView(){
         //---------------JFrame config-------------------
