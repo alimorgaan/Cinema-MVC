@@ -1,6 +1,9 @@
 import  javax.swing.*;
+import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
 
 public class CinemaView extends JFrame {
 
@@ -46,10 +49,17 @@ public class CinemaView extends JFrame {
         loginPanel.setLayout(null);
         //---------------------------------------------------
 
-        //---------------Admin panel------------------------
+        //---------------Admin panel-----------------------
+        adminPanel.setVisible(false);
         adminPanel.setBounds(0 , 0 , 500 , 500);
+        adminPanel.setLayout(null);
         adminPanel.setBackground(new Color(0x1234456));
-        adminMoviesList.setBounds(10 , 10 , 200 , 400);
+        adminMoviesList.setBounds(10 , 10 , 200 , 430);
+        adminMoviesList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        adminMoviesList.setLayoutOrientation(JList.VERTICAL_WRAP);
+        adminMoviesList.setVisibleRowCount(-1);
+        adminPanel.add(adminMoviesList);
+
         //--------------------------------------------------
 
         //--------------Customer panel-----------------------
@@ -60,6 +70,13 @@ public class CinemaView extends JFrame {
 
 
     //--------------Login panel-----------------------
+    public void setAdminLoginButton (ActionListener ac){
+        adminLoginButton.addActionListener(ac);
+    }
+    public void setCustomerLoginButton (ActionListener ac){
+        customerLoginButton.addActionListener(ac);
+    }
+
     public void showLoginPanel() {
         loginPanel.setVisible(true);
     }
@@ -78,6 +95,18 @@ public class CinemaView extends JFrame {
     public void hideAdminPanel() {
         adminPanel.setVisible(false);
     }
+
+    public void setAdminMoviesListData(String[] s){
+        adminMoviesList.setListData(s);
+    }
+
+    public void setAdminMoviesListListener(AncestorListener ac){
+        adminMoviesList.addAncestorListener(ac);
+    }
+
+    public int getAdminMoviesListSelection(){
+        return adminMoviesList.getSelectedIndex();
+    }
     //---------------------------------------------------
 
 
@@ -89,11 +118,6 @@ public class CinemaView extends JFrame {
 
 
 
-    public void setAdminLoginButton (ActionListener ac){
-        adminLoginButton.addActionListener(ac);
-    }
-    public void setCustomerLoginButton (ActionListener ac){
-        customerLoginButton.addActionListener(ac);
-    }
+
 
 }
