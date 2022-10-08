@@ -6,7 +6,6 @@ public class CinemaController {
     CinemaModel model = new CinemaModel();
 
     CinemaController(){
-
         view.setAdminLoginButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

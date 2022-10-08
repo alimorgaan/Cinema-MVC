@@ -33,8 +33,8 @@ public class CinemaView extends JFrame {
         this.add(adminPanel);
         this.add(customerPanel);
         this.setResizable(false);
+        this.setVisible(true);
         //-----------------------------------------------
-
 
         //-----------------Login panel----------------------
         loginPanel.setBounds(0 , 0 , 500 , 500);
@@ -44,7 +44,6 @@ public class CinemaView extends JFrame {
         loginPanel.add(adminLoginButton);
         loginPanel.add(customerLoginButton);
         loginPanel.setLayout(null);
-        this.setVisible(true);
         //---------------------------------------------------
 
         //---------------Admin panel------------------------
@@ -52,16 +51,14 @@ public class CinemaView extends JFrame {
         adminPanel.setBackground(new Color(0x1234456));
         adminMoviesList.setBounds(10 , 10 , 200 , 400);
         //--------------------------------------------------
+
+        //--------------Customer panel-----------------------
+
+        //---------------------------------------------------
+
     }
 
-    public void showAdminPanel() {
-        adminPanel.setVisible(true);
-    }
-
-    public void hideAdminPanel() {
-        adminPanel.setVisible(false);
-    }
-
+    //--------------Login panel-----------------------
     public void showLoginPanel() {
         loginPanel.setVisible(true);
     }
@@ -69,6 +66,27 @@ public class CinemaView extends JFrame {
     public void hideLoginPanel() {
         loginPanel.setVisible(false);
     }
+    //---------------------------------------------------
+
+
+    //--------------Admin panel-----------------------
+    public void showAdminPanel() {
+        adminPanel.setVisible(true);
+    }
+
+    public void hideAdminPanel() {
+        adminPanel.setVisible(false);
+    }
+    //---------------------------------------------------
+
+
+    //--------------Customer panel-----------------------
+
+    //---------------------------------------------------
+
+
+
+
 
     public void setAdminLoginButton (ActionListener ac){
         adminLoginButton.addActionListener(ac);
@@ -76,7 +94,5 @@ public class CinemaView extends JFrame {
     public void setCustomerLoginButton (ActionListener ac){
         customerLoginButton.addActionListener(ac);
     }
-
-
 
 }
