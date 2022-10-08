@@ -22,8 +22,7 @@ public class CinemaView extends JFrame {
 
     //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
-    JList customreMovieList = new JList();
-    //-------------------------------------------------------------
+    //--------------------------------------------------------------------
 
     CinemaView(){
         //---------------JFrame config-------------------
