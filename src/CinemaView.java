@@ -22,7 +22,7 @@ public class CinemaView extends JFrame {
 
     //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
-    
+    JList adminMoviesList = new JList();
     //-------------------------------------------------------------
 
     CinemaView(){
