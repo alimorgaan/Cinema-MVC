@@ -68,7 +68,7 @@ public class CinemaView extends JFrame {
         //--------------------------------------------------
 
         //--------------Customer panel-----------------------
-
+        customerPanel.setVisible(false);
         //---------------------------------------------------
 
     }
@@ -117,7 +117,13 @@ public class CinemaView extends JFrame {
 
 
     //--------------Customer panel-----------------------
+    public void showCustomerPanel() {
+        customerPanel.setVisible(true);
+    }
 
+    public void hideCustomerPanel() {
+        customerPanel.setVisible(false);
+    }
     //---------------------------------------------------
 
 

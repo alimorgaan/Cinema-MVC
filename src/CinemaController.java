@@ -13,6 +13,14 @@ public class CinemaController {
                 view.hideLoginPanel();
             }
         });
+        view.setCustomerLoginButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.hideAdminPanel();
+                view.hideAdminPanel();
+                view.showCustomerPanel();
+            }
+        });
 
         view.setAdminDeleteButton(new ActionListener() {
             @Override
