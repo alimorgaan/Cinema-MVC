@@ -16,11 +16,20 @@ public class CinemaController {
         view.setCustomerLoginButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.hideAdminPanel();
+                view.hideLoginPanel();
                 view.hideAdminPanel();
                 view.showCustomerPanel();
             }
         });
-        
+        view.setCustomerBuyButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.hideLoginPanel();
+                view.hideAdminPanel();
+                view.hideCustomerPanel();
+                view.showTicketPanel();
+            }
+        });
+
     }
 }

@@ -25,7 +25,14 @@ public class CinemaView extends JFrame {
 
     //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
+    JList<String> customerMovieList = new JList<String>();
+    JLabel customerMovieLabel = new JLabel();
+    JButton customerBuyTicket = new JButton("Buy Ticket");
     //--------------------------------------------------------------------
+
+    //--------------Ticket panel-----------------------
+    JPanel ticketPanel = new JPanel();
+    //---------------------------------------------------
 
     CinemaView(){
         //---------------JFrame config-------------------
@@ -35,6 +42,7 @@ public class CinemaView extends JFrame {
         this.add(loginPanel);
         this.add(adminPanel);
         this.add(customerPanel);
+        this.add(ticketPanel);
         this.setResizable(false);
         this.setVisible(true);
         //-----------------------------------------------
@@ -44,6 +52,8 @@ public class CinemaView extends JFrame {
         loginPanel.setBackground(new Color(0x1234456));
         adminLoginButton.setBounds(150 ,200 , 200 , 40);
         customerLoginButton.setBounds(150 ,250 , 200 , 40);
+        customerLoginButton.setFocusable(false);
+        adminLoginButton.setFocusable(false);
         loginPanel.add(adminLoginButton);
         loginPanel.add(customerLoginButton);
         loginPanel.setLayout(null);
@@ -69,6 +79,27 @@ public class CinemaView extends JFrame {
 
         //--------------Customer panel-----------------------
         customerPanel.setVisible(false);
+        customerPanel.setBounds(0 , 0 , 500 , 500);
+        customerPanel.setLayout(null);
+        customerPanel.setBackground(new Color(0x1234456));
+        customerMovieLabel.setText("Select Your Movie");
+        customerMovieLabel.setForeground(Color.white);
+        customerMovieLabel.setBounds(100, 20, 200, 10);
+        customerMovieList.setBounds(100,40, 300, 300);
+        customerMovieList.setFixedCellHeight(20);
+        customerMovieList.setFixedCellWidth(400);
+        customerBuyTicket.setBounds(200, 380, 100, 30);
+        customerBuyTicket.setFocusable(false);
+        customerPanel.add(customerMovieLabel);
+        customerPanel.add(customerMovieList);
+        customerPanel.add(customerBuyTicket);
+        //---------------------------------------------------
+
+        //--------------Ticket panel-----------------------
+        ticketPanel.setVisible(false);
+        ticketPanel.setBounds(0, 0, 500, 500);
+        ticketPanel.setLayout(null);
+        ticketPanel.setBackground(new Color(0x1234456));
         //---------------------------------------------------
 
     }
@@ -124,9 +155,21 @@ public class CinemaView extends JFrame {
     public void hideCustomerPanel() {
         customerPanel.setVisible(false);
     }
+
+    public void setCustomerBuyButton (ActionListener ac){
+        customerBuyTicket.addActionListener(ac);
+    }
     //---------------------------------------------------
 
+    //--------------Ticket panel-----------------------
+    public void showTicketPanel() {
+        ticketPanel.setVisible(true);
+    }
 
+    public void hideTicketPanel() {
+        ticketPanel.setVisible(false);
+    }
+    //---------------------------------------------------
 
 
 
