@@ -6,6 +6,8 @@ public class CinemaController {
     CinemaModel model = new CinemaModel();
 
     CinemaController(){
+
+        //--------------Login Buttons--------------------
         view.setAdminLoginButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -21,6 +23,17 @@ public class CinemaController {
                 view.showCustomerPanel();
             }
         });
+        //-------------------------------------------------
+
+
+        //----------------Admin Buttons-------------------
+
+
+
+        //-------------------------------------------------
+        
+
+        //--------------Customer Buttons--------------------
         view.setCustomerBuyButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,6 +43,8 @@ public class CinemaController {
                 view.showTicketPanel();
             }
         });
+
+        //-------------------------------------------------
 
     }
 }
