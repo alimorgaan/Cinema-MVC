@@ -17,7 +17,7 @@ public class CinemaView extends JFrame {
 
     //-------------------Admin panel-------------------------------
     JPanel adminPanel = new JPanel();
-    JList adminMoviesList = new JList();
+    JList<String> adminMoviesList = new JList<String>();
     JLabel adminMovieLabel = new JLabel();
     JButton adminDeleteButton = new JButton();
     JButton adminAddButton = new JButton();
@@ -54,12 +54,17 @@ public class CinemaView extends JFrame {
         adminPanel.setBounds(0 , 0 , 500 , 500);
         adminPanel.setLayout(null);
         adminPanel.setBackground(new Color(0x1234456));
-        adminMoviesList.setBounds(10 , 10 , 200 , 430);
+        adminMoviesList.setBounds(20 , 10 , 200 , 430);
         adminMoviesList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         adminMoviesList.setLayoutOrientation(JList.VERTICAL_WRAP);
         adminMoviesList.setVisibleRowCount(-1);
+        adminDeleteButton.setBounds(240 , 410 , 220 , 30);
+        adminDeleteButton.setText("Delete Selected Movie");
+        adminAddButton.setBounds(240 , 370 , 220 , 30);
+        adminAddButton.setText("Add New Movie");
         adminPanel.add(adminMoviesList);
-
+        adminPanel.add(adminAddButton);
+        adminPanel.add(adminDeleteButton);
         //--------------------------------------------------
 
         //--------------Customer panel-----------------------
@@ -91,21 +96,22 @@ public class CinemaView extends JFrame {
     public void showAdminPanel() {
         adminPanel.setVisible(true);
     }
-
     public void hideAdminPanel() {
         adminPanel.setVisible(false);
     }
-
     public void setAdminMoviesListData(String[] s){
         adminMoviesList.setListData(s);
     }
-
     public void setAdminMoviesListListener(AncestorListener ac){
         adminMoviesList.addAncestorListener(ac);
     }
 
     public int getAdminMoviesListSelection(){
         return adminMoviesList.getSelectedIndex();
+    }
+
+    public void setAdminDeleteButton (ActionListener ac){
+        adminDeleteButton.addActionListener(ac);
     }
     //---------------------------------------------------
 

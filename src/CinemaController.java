@@ -14,5 +14,13 @@ public class CinemaController {
             }
         });
 
+        view.setAdminDeleteButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("hehe");
+            }
+        });
+
+
     }
 }
