@@ -21,14 +21,6 @@ public class CinemaController {
                 view.showCustomerPanel();
             }
         });
-
-        view.setAdminDeleteButton(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("hehe");
-            }
-        });
-
-
+        
     }
 }
