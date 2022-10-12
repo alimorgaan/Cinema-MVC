@@ -14,4 +14,8 @@ public class CinemaModel {
     public void removeMovie(int i) {
         cinemaMovies.remove(i);
     }
+
+    public void setMovie(Movie newMovie) {
+        cinemaMovies.add(newMovie);
+    }
 }
