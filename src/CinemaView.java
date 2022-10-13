@@ -189,6 +189,10 @@ public class CinemaView extends JFrame {
     public void setCustomerBuyButton (ActionListener ac){
         customerBuyTicket.addActionListener(ac);
     }
+
+    public void showMovies(String[] movies) {
+        customerMovieList.setListData(movies);
+    }
     //---------------------------------------------------
 
     //--------------Ticket panel-----------------------
