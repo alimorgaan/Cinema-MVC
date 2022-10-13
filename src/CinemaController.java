@@ -11,13 +11,15 @@ public class CinemaController {
     CinemaModel model = new CinemaModel();
 
     CinemaController(){
-        Movie m1 = new Movie("iron man1", "action", 200);
-        Movie m2 = new Movie("iron man2", "action", 200);
-        Movie m3 = new Movie("iron man3", "action", 200);
+        Movie m1 = new Movie("Iron Man", "Action", 200);
+        Movie m2 = new Movie("Harry Potter", "Fantasy", 200);
+        Movie m3 = new Movie("Venom", "Science Fiction", 200);
+        Movie m4 = new Movie("The Invisible Guest", "Mystery", 200);
 
         model.setMovie(m1);
         model.setMovie(m2);
         model.setMovie(m3);
+        model.setMovie(m4);
 
         //--------------Login Buttons--------------------
         view.setAdminLoginButton(new ActionListener() {
