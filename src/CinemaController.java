@@ -28,10 +28,16 @@ public class CinemaController {
 
         //----------------Admin Buttons-------------------
 
-
+        view.setAdminAddButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Movie newMovie = new Movie(view.getNewMovieName(), view.getNewMovieCat(), view.getNewMovieSeats());
+                model.setMovie(newMovie);
+            }
+        });
 
         //-------------------------------------------------
-        
+
 
         //--------------Customer Buttons--------------------
         view.setCustomerBuyButton(new ActionListener() {

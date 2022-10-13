@@ -21,7 +21,12 @@ public class CinemaView extends JFrame {
     JLabel adminMovieLabel = new JLabel();
     JButton adminDeleteButton = new JButton();
     JButton adminAddButton = new JButton();
+    JTextField movieNameInput = new JTextField(20);
+    JTextField movieCatInput = new JTextField(20);
+    JTextField movieSeatsInput = new JTextField(20);
     //-------------------------------------------------------------
+
+
 
     //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
@@ -72,6 +77,15 @@ public class CinemaView extends JFrame {
         adminDeleteButton.setText("Delete Selected Movie");
         adminAddButton.setBounds(240 , 370 , 220 , 30);
         adminAddButton.setText("Add New Movie");
+        movieNameInput.setBounds(240 , 280 , 220 , 20);
+        movieCatInput.setBounds(240 , 310 , 220 , 20);
+        movieSeatsInput.setBounds(240 , 340 , 220 , 20);
+        movieNameInput.setText("new movie name");
+        movieCatInput.setText("new movie category");
+        movieSeatsInput.setText("new movie available seats");
+        adminPanel.add(movieNameInput);
+        adminPanel.add(movieCatInput);
+        adminPanel.add(movieSeatsInput);
         adminPanel.add(adminMoviesList);
         adminPanel.add(adminAddButton);
         adminPanel.add(adminDeleteButton);
@@ -143,6 +157,22 @@ public class CinemaView extends JFrame {
 
     public void setAdminDeleteButton (ActionListener ac){
         adminDeleteButton.addActionListener(ac);
+    }
+
+    public void setAdminAddButton (ActionListener ac){
+        adminAddButton.addActionListener(ac);
+    }
+
+    public String getNewMovieName (){
+        return movieNameInput.getText();
+    }
+
+    public String getNewMovieCat (){
+        return movieCatInput.getText();
+    }
+
+    public int getNewMovieSeats (){
+        return Integer.parseInt(movieSeatsInput.getText());
     }
     //---------------------------------------------------
 
