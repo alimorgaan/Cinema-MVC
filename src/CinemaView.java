@@ -1,5 +1,6 @@
 import  javax.swing.*;
 import javax.swing.event.AncestorListener;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -19,9 +20,16 @@ public class CinemaView extends JFrame {
     JPanel adminPanel = new JPanel();
     JList<String> adminMoviesList = new JList<String>();
     JLabel adminMovieLabel = new JLabel();
+    JTextArea adminTextArea = new JTextArea();
     JButton adminDeleteButton = new JButton();
     JButton adminAddButton = new JButton();
+    JTextField movieNameInput = new JTextField(20);
+    JTextField movieCatInput = new JTextField(20);
+    JTextField movieSeatsInput = new JTextField(20);
+    JButton adminToLogin = new JButton("Back to Login Page");
     //-------------------------------------------------------------
+
+
 
     //------------------Customer panel-------------------------------------
     JPanel customerPanel = new JPanel();
@@ -71,10 +79,27 @@ public class CinemaView extends JFrame {
         adminMoviesList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         adminMoviesList.setLayoutOrientation(JList.VERTICAL_WRAP);
         adminMoviesList.setVisibleRowCount(-1);
-        adminDeleteButton.setBounds(240 , 410 , 220 , 30);
+        adminDeleteButton.setBounds(240 , 360 , 220 , 30);
         adminDeleteButton.setText("Delete Selected Movie");
-        adminAddButton.setBounds(240 , 370 , 220 , 30);
+        adminAddButton.setBounds(240 , 320 , 220 , 30);
+        adminToLogin.setBounds(240 , 360 , 220 , 80);
         adminAddButton.setText("Add New Movie");
+        movieNameInput.setBounds(240 , 230 , 220 , 20);
+        movieCatInput.setBounds(240 , 260 , 220 , 20);
+        movieSeatsInput.setBounds(240 , 290 , 220 , 20);
+        movieNameInput.setText("new movie name");
+        movieCatInput.setText("new movie category");
+        movieSeatsInput.setText("new movie available seats");
+        adminTextArea.setBackground(new Color(0xffffff));
+        adminTextArea.setBounds(240 , 10 , 220 , 200);
+        adminTextArea.setFont(adminTextArea.getFont().deriveFont(14f));
+        adminTextArea.setFocusable(false);
+        adminTextArea.setMargin(new Insets(10,10,10,10));
+        adminPanel.add(adminToLogin);
+        adminPanel.add(adminTextArea);
+        adminPanel.add(movieNameInput);
+        adminPanel.add(movieCatInput);
+        adminPanel.add(movieSeatsInput);
         adminPanel.add(adminMoviesList);
         adminPanel.add(adminAddButton);
         adminPanel.add(adminDeleteButton);
@@ -149,8 +174,8 @@ public class CinemaView extends JFrame {
     public void setAdminMoviesListData(String[] s){
         adminMoviesList.setListData(s);
     }
-    public void setAdminMoviesListListener(AncestorListener ac){
-        adminMoviesList.addAncestorListener(ac);
+    public void setAdminMoviesListListener(ListSelectionListener l){
+        adminMoviesList.addListSelectionListener(l);
     }
 
     public int getAdminMoviesListSelection(){
@@ -159,6 +184,35 @@ public class CinemaView extends JFrame {
 
     public void setAdminDeleteButton (ActionListener ac){
         adminDeleteButton.addActionListener(ac);
+    }
+
+    public void setAdminAddButton (ActionListener ac){
+        adminAddButton.addActionListener(ac);
+    }
+
+    public String getNewMovieName (){
+        return movieNameInput.getText();
+    }
+
+    public String getNewMovieCat (){
+        return movieCatInput.getText();
+    }
+
+    public int getNewMovieSeats (){
+        try {
+            return Integer.parseInt(movieSeatsInput.getText());
+        }catch (RuntimeException e){
+            return 0;
+        }
+
+    }
+
+    public void setMovieDetails(String name , String cat , int seats){
+        adminTextArea.setText("Name : " + name + "\n" + "Category : " + cat + "\n" + "Available seats : " + seats + "\n");
+    }
+
+    public void setAdminToLogin(ActionListener ac){
+        adminToLogin.addActionListener(ac);
     }
     //---------------------------------------------------
 

@@ -1,3 +1,7 @@
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,6 +25,9 @@ public class CinemaController {
             public void actionPerformed(ActionEvent e) {
                 view.showAdminPanel();
                 view.hideLoginPanel();
+                view.hideTicketPanel();
+                view.hideCustomerPanel();
+                view.setAdminMoviesListData(getMoviesName(model.getCinemaMovies()));
             }
         });
         view.setCustomerLoginButton(new ActionListener() {
@@ -36,10 +43,45 @@ public class CinemaController {
 
         //----------------Admin Buttons-------------------
 
+        view.setAdminAddButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Movie newMovie = new Movie(view.getNewMovieName(), view.getNewMovieCat(), view.getNewMovieSeats());
+                model.setMovie(newMovie);
+                view.setAdminMoviesListData(getMoviesName(model.getCinemaMovies()));
+            }
+        });
 
+        view.setAdminDeleteButton(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.removeMovie(view.getAdminMoviesListSelection());
+                view.setAdminMoviesListData(getMoviesName(model.getCinemaMovies()));
+            }
+        });
 
+        view.setAdminMoviesListListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Movie selectedMovie ;
+                if(view.getAdminMoviesListSelection() != -1) {
+                    selectedMovie = model.getMovie(view.getAdminMoviesListSelection());
+                    view.setMovieDetails(selectedMovie.getName(), selectedMovie.getCategory(), selectedMovie.getAvailableTickets());
+                }
+            }
+        });
+
+        view.setAdminToLogin(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.showLoginPanel();
+                view.hideAdminPanel();
+                view.hideCustomerPanel();
+                view.hideTicketPanel();
+            }
+        });
         //-------------------------------------------------
-        
+
 
         //--------------Customer Buttons--------------------
         view.setCustomerBuyButton(new ActionListener() {
