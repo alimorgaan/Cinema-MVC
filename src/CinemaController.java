@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class CinemaController {
-    CinemaView view = new CinemaView();
-    CinemaModel model = new CinemaModel();
+    private CinemaView view = new CinemaView();
+    private CinemaModel model = new CinemaModel();
 
     CinemaController(){
         Movie m1 = new Movie("Iron Man", "Action", 200);
