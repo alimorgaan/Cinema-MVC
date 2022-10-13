@@ -32,6 +32,9 @@ public class CinemaView extends JFrame {
 
     //--------------Ticket panel-----------------------
     JPanel ticketPanel = new JPanel();
+    JLabel thankMsg = new JLabel();
+    JLabel ticketCode = new JLabel();
+    JButton backButton = new JButton("Back");
     //---------------------------------------------------
 
     CinemaView(){
@@ -50,8 +53,8 @@ public class CinemaView extends JFrame {
         //-----------------Login panel----------------------
         loginPanel.setBounds(0 , 0 , 500 , 500);
         loginPanel.setBackground(new Color(0x1234456));
-        adminLoginButton.setBounds(150 ,200 , 200 , 40);
-        customerLoginButton.setBounds(150 ,250 , 200 , 40);
+        adminLoginButton.setBounds(150 ,185 , 200 , 40);
+        customerLoginButton.setBounds(150 ,235 , 200 , 40);
         customerLoginButton.setFocusable(false);
         adminLoginButton.setFocusable(false);
         loginPanel.add(adminLoginButton);
@@ -100,6 +103,19 @@ public class CinemaView extends JFrame {
         ticketPanel.setBounds(0, 0, 500, 500);
         ticketPanel.setLayout(null);
         ticketPanel.setBackground(new Color(0x1234456));
+        thankMsg.setText("Enjoy Your Movie !");
+        thankMsg.setForeground(Color.white);
+        thankMsg.setFont(new Font("Verdana", Font.BOLD, 20));
+        thankMsg.setBounds(140, 190, 300, 20);
+        ticketCode.setText("Your Code is : XTC675");
+        ticketCode.setForeground(Color.white);
+        ticketCode.setFont(new Font("Verdana", Font.BOLD, 20));
+        ticketCode.setBounds(120, 150, 300, 20);
+        backButton.setBounds(190, 240, 100, 30);
+        backButton.setFocusable(false);
+        ticketPanel.add(thankMsg);
+        ticketPanel.add(backButton);
+        ticketPanel.add(ticketCode);
         //---------------------------------------------------
 
     }
@@ -163,6 +179,7 @@ public class CinemaView extends JFrame {
     public void showMovies(String[] movies) {
         customerMovieList.setListData(movies);
     }
+
     //---------------------------------------------------
 
     //--------------Ticket panel-----------------------
@@ -173,6 +190,10 @@ public class CinemaView extends JFrame {
     public void hideTicketPanel() {
         ticketPanel.setVisible(false);
     }
+
+    public void back(ActionListener ac){backButton.addActionListener(ac);};
+
+    public int getSelectedMovie() {return customerMovieList.getSelectedIndex();}
     //---------------------------------------------------
 
 

@@ -27,7 +27,6 @@ public class CinemaController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.hideLoginPanel();
-                view.hideAdminPanel();
                 view.showCustomerPanel();
                 view.showMovies(getMoviesName(model.getCinemaMovies()));
             }
@@ -46,10 +45,19 @@ public class CinemaController {
         view.setCustomerBuyButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.hideLoginPanel();
-                view.hideAdminPanel();
-                view.hideCustomerPanel();
-                view.showTicketPanel();
+                if (view.getSelectedMovie() != -1) {
+                    model.getMovie(view.getSelectedMovie()).ticketIsToken();
+                    view.hideCustomerPanel();
+                    view.showTicketPanel();
+                }
+            }
+        });
+
+        view.back(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.hideTicketPanel();
+                view.showLoginPanel();
             }
         });
 
@@ -66,4 +74,5 @@ public class CinemaController {
 
         return names;
     }
+
 }

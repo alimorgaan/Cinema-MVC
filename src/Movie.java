@@ -9,6 +9,10 @@ public class Movie {
         this.availableTickets = availableTickets;
     }
 
+    public void ticketIsToken() {
+        this.availableTickets--;
+    }
+
     public int getAvailableTickets() {
         return availableTickets;
     }
