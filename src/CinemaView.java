@@ -47,6 +47,7 @@ public class CinemaView extends JFrame {
 
     CinemaView(){
         //---------------JFrame config-------------------
+        this.setTitle("Cinema");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500 ,500);
         this.setLayout(null);
