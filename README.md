@@ -15,11 +15,12 @@
 
 
 - ### Buy Ticket Sequence Diagram
-![ticket](https://user-images.githubusercontent.com/32411364/195855073-0864707d-da83-47a1-ad15-3f78fa5a6fab.jpeg)
+![ticket (2)](https://user-images.githubusercontent.com/32411364/195858222-63c086cf-bc80-4917-9213-4b928612a992.jpeg)
+
 
 
 - ### Screenshots
 
-![admin](https://user-images.githubusercontent.com/32411364/195856472-1a846a08-210d-4553-b699-d5411c79cba7.PNG)
-![cus](https://user-images.githubusercontent.com/32411364/195856482-2dca6f91-43b6-46b3-b10c-fbd44bda7fce.PNG)
-![tick](https://user-images.githubusercontent.com/32411364/195856498-1f21f548-ac12-401c-acd5-82e48aa9326c.PNG)
+![admin](https://user-images.githubusercontent.com/32411364/195858130-4cd7bf6f-f1fd-4496-bbe7-8a566faac337.PNG)
+![cus](https://user-images.githubusercontent.com/32411364/195858145-31fea616-2b51-4956-9e02-73a69a905a05.PNG)
+![tick](https://user-images.githubusercontent.com/32411364/195858155-469300d6-bb68-4e87-8051-aa5c07f1486d.PNG)
