@@ -17,3 +17,9 @@
 - ### Buy Ticket Sequence Diagram
 ![ticket](https://user-images.githubusercontent.com/32411364/195855073-0864707d-da83-47a1-ad15-3f78fa5a6fab.jpeg)
 
+
+- ### Screenshots
+
+![admin](https://user-images.githubusercontent.com/32411364/195856472-1a846a08-210d-4553-b699-d5411c79cba7.PNG)
+![cus](https://user-images.githubusercontent.com/32411364/195856482-2dca6f91-43b6-46b3-b10c-fbd44bda7fce.PNG)
+![tick](https://user-images.githubusercontent.com/32411364/195856498-1f21f548-ac12-401c-acd5-82e48aa9326c.PNG)
