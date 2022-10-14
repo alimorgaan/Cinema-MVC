@@ -21,9 +21,9 @@
 
 - ### Screenshots
 
-- #### Admin Page 
+-- #### Admin Page 
 ![admin](https://user-images.githubusercontent.com/32411364/195859680-603dfcf6-d232-44e8-83ca-6ea5c12f2f20.PNG)
 
-- #### Customer Page
+-- #### Customer Page
 ![cus](https://user-images.githubusercontent.com/32411364/195859700-02d7d218-31d6-45ce-baa7-b83010ae8256.PNG)
 ![tick](https://user-images.githubusercontent.com/32411364/195859713-c35820d4-d8f8-4329-9dc4-33790ad5b84f.PNG)
