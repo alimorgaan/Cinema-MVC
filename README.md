@@ -10,4 +10,10 @@
 
 
 - ### Adding Movie Sequence Diagram
-![Sequence diagram](https://user-images.githubusercontent.com/32411364/195851410-5426fb29-d077-443b-b2f3-7d67bd9bd799.jpeg)
+![Sequence diagram (1)](https://user-images.githubusercontent.com/32411364/195854979-0aa21d9e-0f2a-4c94-81ee-f4ba2dd47fca.jpeg)
+
+
+
+- ### Buy Ticket Sequence Diagram
+![ticket](https://user-images.githubusercontent.com/32411364/195855073-0864707d-da83-47a1-ad15-3f78fa5a6fab.jpeg)
+
